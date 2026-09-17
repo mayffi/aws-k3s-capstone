@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monitoring-lab-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: monitoring-lab-app
+  template:
+    metadata:
+      labels:
+        app: monitoring-lab-app
+    spec:
+      containers:
+        - name: app
+          image: mayffi/monitoring-lab-app:latest
+          ports:
+            - containerPort: 3000
