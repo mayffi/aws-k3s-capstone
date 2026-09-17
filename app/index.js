@@ -15,8 +15,7 @@ const httpRequestCounter = new client.Counter({
 
 app.get('/', (req, res) => {
   httpRequestCounter.inc({ method: 'GET', route: '/', status: 200 });
-  res.send('Hello from monitoring-lab app');
-});
+  res.send('Hello from monitoring-lab app, deployed automatically via CI/CD');});
 
 app.get('/health', (req, res) => {
   httpRequestCounter.inc({ method: 'GET', route: '/health', status: 200 });
